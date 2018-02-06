@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     /** Create method with own toolbar */
@@ -120,5 +123,12 @@ public class MainActivity extends AppCompatActivity {
                     findViewById(R.id.imageView11).setVisibility(View.INVISIBLE);
                 break;
         }
+    }
+
+    /** Rotation of Mr. Potatohead */
+    public void rotateAnimation(View view) {
+        ConstraintLayout images = (ConstraintLayout) findViewById(R.id.constraintLayout2);
+        Animation startRotateAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_animation);
+        images.startAnimation(startRotateAnimation);
     }
 }
